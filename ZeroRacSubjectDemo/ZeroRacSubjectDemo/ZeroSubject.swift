@@ -16,7 +16,7 @@ class ZeroSubject: NSObject {
             self.block!(value: value)
         }
     }
-    func subscribe(subscriber: ((value : AnyObject?)->())?) {
+    func subscribeNext(subscriber: ((value : AnyObject?)->())?) {
         self.block = subscriber
     }
 

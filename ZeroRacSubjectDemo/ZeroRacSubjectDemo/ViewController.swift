@@ -10,10 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    let subject = ZeroSubject()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
+        subject.subscribeNext { (value) in
+          
+            print(value)
+           self.label.text = "\(Int(self.label.text!)! + (value as! Int))"
+            
+          
+        }
+        
+        
     }
+    
+    @IBAction func clickBtn(sender: AnyObject) {
+        self.subject.sendNext(1)
+        
+    }
+  
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
