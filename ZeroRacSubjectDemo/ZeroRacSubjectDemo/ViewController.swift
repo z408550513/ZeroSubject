@@ -18,12 +18,12 @@ class ViewController: UIViewController {
        
         
         subject.subscribeNext { (value) in
-          
             print(value)
            self.label.text = "\(Int(self.label.text!)! + (value as! Int))"
-            
-          
         }
+        
+        
+        
         
         
     }
